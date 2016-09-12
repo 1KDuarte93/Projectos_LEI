@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="MeetoWAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/MeetoWAR</output-path>
+    <root id="archive" name="MeetoWAR.war">
+      <element id="artifact" artifact-name="Meeto" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

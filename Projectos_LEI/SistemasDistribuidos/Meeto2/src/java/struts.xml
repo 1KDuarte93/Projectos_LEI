@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The core configuration file for the framework is the default (struts.xml) file
+and should reside on the classpath of the webapp (generally /WEB-INF/classes). -->
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    
+    <constant name="struts.action.excludePattern" value="/cenas.action"/>
+    
+    <package name="default" extends="struts-default">
+        
+        <action name="login" class="cenas.action.LoginAction">
+            <result name="success">menu.jsp</result>
+            <result name="loginerror">loginerror.jsp</result>
+            <result name="errorconnection">errorconnection.jsp</result>
+        </action>
+        
+        <action name="newaccount" class="cenas.action.NewAccount">
+            <result name="usernameinuse">usernameinuse.jsp</result>
+            <result name="success">menu.jsp</result>
+            <result name="errorconnection">errorconnection.jsp</result>
+        </action>
+        
+        <action name="newaccount_page">
+            <result>newaccount.jsp</result>
+        </action>
+        
+        <action name="createmeeting_page">
+            <result>createmeeting.jsp</result>
+        </action>
+        
+        <action name="createmeeting_action" class="cenas.action.CreateMeeting">
+            <result name="success">additems.jsp</result>
+            <result name="error">errorconnection.jsp</result>
+        </action>
+        
+        <action name="logout_page" class="cenas.action.LogoutAction">
+            <result name="success">index.jsp</result>
+        </action>
+        
+        <action name="consultarreunioes_page" class="cenas.action.ActualizarInformacao">
+            <result name="success">verreuniao.jsp</result>
+        </action>
+        
+        <action name="loginverif" class="cenas.action.LoginVerificacao">
+            <result name="go2menu">menu.jsp</result>
+            <result name="go2loginpage">login.jsp</result>
+        </action>
+        
+        <action name="additem_action" class="cenas.action.AddItemAction">
+            <result name="success">additems.jsp</result>
+             <result name="loginerror">loginerror.jsp</result>
+             <result name="failure">loginerror.jsp</result>
+        </action>
+        
+        <action name="sair">
+            <result>menu.jsp</result>
+        </action>
+        
+        <action name="convidaruserpage" class="cenas.action.ActualizarInformacao">
+            <result name="success">convidaruser.jsp</result>
+        </action>
+        
+        <action name="convidaruser" class="cenas.action.ConvidarUserAction">
+            <result name="loginerror">loginerror.jsp</result>
+            <result name="success">convidaruser.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+
+        <action name="actualizarconvites" class="cenas.action.ActualizarInformacao">
+            <result name="success">aceitarconvites.jsp</result>
+        </action>
+        
+        <action name="aceitarconv" class="cenas.action.AceitarConvite">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        
+        <action name="operacoesitems" class="cenas.action.ActualizarInformacao">
+            <result name="success">operacoesitems.jsp</result>
+        </action>
+        
+        <action name="adicionaragendaitem" class="cenas.action.AdicionarItemAction">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        <action name="editaragendaitem" class="cenas.action.EditarItemAction">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        <action name="apagaragendaitem" class="cenas.action.EliminarItemAction">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        
+        <action name="addactionitem" class="cenas.action.ActualizarInformacao">
+            <result name="success">adicionaractionitems.jsp</result>
+        </action>
+        
+        <action name="addactionitemuser" class="cenas.action.NewActionItem">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+            <result name="usernaoexiste">usernaoexiste.jsp</result>
+        </action>
+        
+        <action name="tasks" class="cenas.action.ActualizarInformacao">
+            <result name="success">tarefas.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        
+        <action name="fazertarefa" class="cenas.action.FazerTarefa">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+            <result name="naoexiste">tarefanaoexiste.jsp</result>
+        </action>
+        
+        <action name="key" class="cenas.action.ActualizarInformacao">
+            <result name="success">addkey.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        
+        <action name="adicionarkey" class="cenas.action.AddKey">
+            <result name="success">menu.jsp</result>
+            <result name="failure">errorconnection.jsp</result>
+        </action>
+        
+        <action name="chat">
+            <result>chat.jsp</result>
+        </action>
+        
+        
+    </package>
+    
+</struts>
